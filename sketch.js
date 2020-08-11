@@ -4,7 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var box1Body;
+var boxBody;
 
 function preload()
 {
@@ -40,8 +40,11 @@ function setup() {
 	World.add(world, packageBody);
 	
 
-	//Create a Ground
-	ground = Bodies.rectangle(width/2, 628, width, 10 , {isStatic:true} );
+	
+	boxBody = Bodies.rectangle(width/2, 628, width, 10 , {isStatic:true} );
+	 World.add(world, boxBody);
+	 
+	 ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
  	World.add(world, ground);
 
 	 var ground_options ={
