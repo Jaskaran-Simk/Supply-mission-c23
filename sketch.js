@@ -4,7 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var boxBody;
+var boxBody,boxBody2,boxBody3;
 
 function preload()
 {
@@ -41,11 +41,18 @@ function setup() {
 	
 
 	
-	boxBody = Bodies.rectangle(width/2, 628, width, 10 , {isStatic:true} );
+	boxBody = Bodies.rectangle(380,630,200,20, {isStatic:true} );
 	 World.add(world, boxBody);
+
+	 boxBody2 = Bodies.rectangle(290,610,20,100, {isStatic:true} );
+	 World.add(world, boxBody2);
+
+	 
+	 boxBody3 = Bodies.rectangle( 470,610,20,100, {isStatic:true} );
+	 World.add(world, boxBody3);
 	 
 	 ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
- 	World.add(world, ground);
+ 	 World.add(world, ground);
 
 	 var ground_options ={
         isStatic: false
@@ -72,7 +79,7 @@ function draw() {
 
   
   
-  
+  keyPressed();
   drawSprites();
  
  
